@@ -8,7 +8,10 @@ function HeaderProfile(props) {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="headerProfile" ref={props.profileRef}>
+    <div
+      className={`headerProfile ${props.value ? "headerProfileDark" : ""}`}
+      ref={props.profileRef}
+    >
       <div className="headerProfile_header">
         <img src={user?.photoURL} alt={user?.displayName} />
         <div className="headerProfile_name">

@@ -164,11 +164,16 @@ function Header({ value, setValue }) {
           <ScheduleIcon className="header_ScheduleIcon" />
         </IconButton>
       </div>
-      {isHistoryVisible && <HeaderHistory historyRef={historyRef} />}
+      {isHistoryVisible && (
+        <HeaderHistory value={value} historyRef={historyRef} />
+      )}
 
       <div className="header_search_container">
         <button
-          style={{ backgroundColor: value && "#111" }}
+          style={{
+            backgroundColor: value && "#111",
+            border: value && "1px solid gray",
+          }}
           onClick={() => setIsSearchVisible(!isSearchVisible)}
         >
           <span>Search</span>
@@ -176,6 +181,7 @@ function Header({ value, setValue }) {
       </div>
       {isSearchVisible && (
         <HeaderSearch
+          value={value}
           searchRef={searchRef}
           searchVisibility={isSearchVisible}
           setIsSearchVisible={setIsSearchVisible}
@@ -190,14 +196,16 @@ function Header({ value, setValue }) {
           <HelpOutlineOutlinedIcon className="header_HelpOutlineOutlinedIcon" />
         </IconButton>
       </div>
-      {isHelpVisible && <HeaderHelp helpRef={helpRef} />}
+      {isHelpVisible && <HeaderHelp value={value} helpRef={helpRef} />}
 
       <div className="header_profile">
         <button onClick={() => setIsProfileVisible(!isProfileVisible)}>
           <img src={user?.photoURL} />
         </button>
       </div>
-      {isProfileVisible && <HeaderProfile profileRef={profileRef} />}
+      {isProfileVisible && (
+        <HeaderProfile value={value} profileRef={profileRef} />
+      )}
     </div>
   );
 }

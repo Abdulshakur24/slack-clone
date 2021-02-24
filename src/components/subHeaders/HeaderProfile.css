@@ -9,6 +9,14 @@
   padding: 0.5rem 0rem;
 }
 
+.headerProfileDark {
+  background-color: #111;
+}
+
+.headerProfileDark div {
+  color: white;
+}
+
 .headerProfile_header {
   display: flex;
   flex-direction: row;

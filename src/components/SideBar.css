@@ -37,7 +37,7 @@
 /* Handle */
 .sidebarScrollDark::-webkit-scrollbar-thumb {
   background: rgb(26, 26, 26);
-  border-left: 1px solid #4b204c;
+  border-left: 1px solid #262626;
 }
 /* Handle on hover */
 .sidebarScrollDark::-webkit-scrollbar-thumb:hover {

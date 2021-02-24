@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./HeaderHistory.css";
 
-function HeaderHistory({ historyRef }) {
+function HeaderHistory({ historyRef, value }) {
   const [recent, setRecent] = useState(true);
   return (
-    <div className="headerHistory" ref={historyRef}>
+    <div
+      className="headerHistory"
+      ref={historyRef}
+      style={value ? { backgroundColor: "#111", color: "white" } : {}}
+    >
       <div className="headerHistory_container">
         <div>
           <h1>Recent</h1>

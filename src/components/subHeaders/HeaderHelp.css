@@ -28,3 +28,16 @@
   color: white;
   cursor: pointer;
 }
+
+.headerHelpDark {
+  color: white;
+  background-color: #111;
+}
+
+.headerHelpDark div {
+  color: white;
+}
+
+.headerHelpDark div:hover {
+  background-color: gray;
+}

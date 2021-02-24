@@ -3,8 +3,12 @@ import "./HeaderHelp.css";
 import LaunchIcon from "@material-ui/icons/Launch";
 
 function HeaderHelp(props) {
+  console.log(props);
   return (
-    <div className="headerHelp" ref={props.helpRef}>
+    <div
+      className={`headerHelp ${props.value ? "headerHelpDark" : ""}`}
+      ref={props.helpRef}
+    >
       <div>
         <p>Get help</p>
       </div>
