@@ -20,7 +20,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 function SideBar({ value }) {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
-
   const [user] = useAuthState(auth);
   return (
     <div className={`sideBar ${value ? "sidebarScrollDark" : "sidebarScroll"}`}>
@@ -33,7 +32,7 @@ function SideBar({ value }) {
               {user?.displayName}
             </h3>
           </SidebarInfo>
-          <CreateIcon />
+          <CreateIcon style={value ? { color: "black" } : {}} />
         </SidebarHeader>
         <SidebarOption value={value} Icon={InsertCommentIcon} title="Threads" />
         <SidebarOption
