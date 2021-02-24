@@ -156,7 +156,12 @@ function Header({ value, setValue }) {
       style={{ backgroundColor: value && "#111" }}
     >
       <div className="header_siderBar">
-        <SwitchToggle isOn={value} handleToggle={() => setValue(!value)} />
+        <SwitchToggle
+          value={value}
+          setValue={setValue}
+          isOn={value}
+          handleToggle={() => setValue(!value)}
+        />
         <IconButton
           className="header_iconButton"
           onClick={() => setIsHistoryVisible(!isHistoryVisible)}

@@ -32,8 +32,6 @@ function Chat({ value }) {
     });
   }, [roomId, loading]);
 
-  console.log(roomMessages?.docs);
-
   return (
     <ChatContainer
       className="chat"
