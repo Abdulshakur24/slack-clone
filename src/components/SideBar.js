@@ -74,6 +74,7 @@ function SideBar({ value }) {
 export default SideBar;
 
 const SidebarContainer = styled.div`
+  height: 100%;
   transition: all 300ms ease-in-out;
   color: white;
 `;

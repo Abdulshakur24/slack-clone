@@ -26,6 +26,10 @@
   background: #561357;
 }
 
+.sidebarScrollDark {
+  background-color: #111 !important;
+}
+
 /*Dark mode*/
 .sidebarScrollDark::-webkit-scrollbar {
   width: 10px;
