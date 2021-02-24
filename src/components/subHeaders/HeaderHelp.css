@@ -1,0 +1,30 @@
+.headerHelp {
+  position: absolute;
+  top: 5%;
+  left: 38%;
+  right: 27%;
+  height: 25%;
+  background-color: white;
+  border: 1px solid #d5d5d5;
+  border-radius: 4px;
+  padding: 0.5rem 0rem;
+}
+
+.headerHelp div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20%;
+  padding: 0rem 1rem;
+}
+
+.headerHelp a {
+  text-decoration: none;
+  color: black;
+}
+
+.headerHelp div:hover {
+  background-color: rgb(50, 91, 225);
+  color: white;
+  cursor: pointer;
+}

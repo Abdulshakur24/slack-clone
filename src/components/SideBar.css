@@ -1,0 +1,51 @@
+.sideBar {
+  width: 25%;
+  height: 100%;
+  background-color: #3f0e40;
+  overflow-y: auto;
+}
+
+.sidebarDark {
+  border-bottom: 1px solid rgb(43, 43, 43) !important;
+}
+
+.sidebarScroll::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.sidebarScroll::-webkit-scrollbar-track {
+  background: #845585;
+}
+/* Handle */
+.sidebarScroll::-webkit-scrollbar-thumb {
+  background: #360c37;
+  border-left: 1px solid #4b204c;
+}
+/* Handle on hover */
+.sidebarScroll::-webkit-scrollbar-thumb:hover {
+  background: #561357;
+}
+
+/*Dark mode*/
+.sidebarScrollDark::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.sidebarScrollDark::-webkit-scrollbar-track {
+  background: rgb(70, 70, 70);
+}
+/* Handle */
+.sidebarScrollDark::-webkit-scrollbar-thumb {
+  background: rgb(26, 26, 26);
+  border-left: 1px solid #4b204c;
+}
+/* Handle on hover */
+.sidebarScrollDark::-webkit-scrollbar-thumb:hover {
+  background: #111;
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .sideBar {
+    width: 30%;
+  }
+}

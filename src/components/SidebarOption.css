@@ -1,0 +1,21 @@
+.sidebarOption_dark {
+}
+
+.hrDark {
+  height: 1px !important;
+  background-color: rgb(55, 55, 55);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.hr {
+  height: 1px !important;
+  background-color: rgb(95, 43, 95);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+.sidebarOption_dark:hover {
+  background-color: rgb(77, 75, 75) !important;
+}

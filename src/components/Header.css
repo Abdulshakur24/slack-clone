@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 5.5%;
+  background-color: #350d36;
+  border-bottom: 1px solid #4b204c;
+  transition: all 300ms ease-in-out;
+}
+
+.headerDark {
+  border-bottom: 1px solid rgb(72, 72, 72);
+}
+
+.header_siderBar {
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
+  flex: 1;
+  min-width: 8rem;
+  justify-content: flex-end;
+}
+
+.header_iconButton {
+  padding: 5px !important;
+  z-index: 0;
+}
+
+.header_search_container {
+  position: relative;
+  align-items: center;
+  flex: 2;
+  min-width: 0;
+  max-width: 500px;
+  display: flex;
+}
+
+.header_search_container button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 4.375rem;
+  background-color: #431e44;
+  height: 70%;
+  border: 1px solid #684a68;
+  outline: none;
+  border-radius: 0.25rem;
+}
+.header_search_container button span {
+  margin-left: 0.5rem;
+}
+
+.header_search_container button:hover {
+  opacity: 1;
+}
+
+.header_ScheduleIcon,
+.header_HelpOutlineOutlinedIcon,
+.header_search_container button {
+  color: #d7cfd7;
+  cursor: pointer;
+  transition: all 200ms ease-in-out !important;
+}
+.header_ScheduleIcon:hover,
+.header_HelpOutlineOutlinedIcon:hover,
+.header_search_container button:hover {
+  color: white;
+}
+
+.header_search_container button:hover {
+  background-color: rgb(73, 37, 74);
+  border: 1px solid rgb(154, 134, 155);
+}
+
+.header_markQuestion {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.header_profile {
+  flex: 1;
+  min-width: 8rem;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.header_profile button {
+  height: 80%;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.header_profile button img {
+  height: 100%;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 43.75rem) {
+  .header_siderBar {
+    min-width: 4rem;
+  }
+  .header_profile {
+    min-width: 4rem;
+  }
+}
