@@ -91,10 +91,11 @@
 
 .header_profile button {
   height: 80%;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: none;
   cursor: pointer;
   outline: none;
+  width: 8%;
 }
 
 .header_profile button img {
