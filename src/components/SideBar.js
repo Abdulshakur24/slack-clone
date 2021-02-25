@@ -57,6 +57,7 @@ function SideBar({ value }) {
         <hr className={`${value ? "hrDark" : "hr"}`} />
         <SidebarOption value={value} Icon={ExpandMoreIcon} title="Channel" />
         <hr className={`${value ? "hrDark" : "hr"}`} />
+
         <SidebarOption
           value={value}
           Icon={AddIcon}

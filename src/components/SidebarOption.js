@@ -8,6 +8,7 @@ import "./SidebarOption.css";
 
 function SidebarOption({ Icon, title, addChannelOption, id, value }) {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
+  const channelRef = useRef(null);
   const dispatch = useDispatch();
   const addChannel = () => {
     const channelName = prompt("Please enter the channel name");
