@@ -9,6 +9,10 @@
   border-radius: 4px;
 }
 
+.ChatInputSubContainer input {
+  transition: all 300ms ease-in-out;
+}
+
 .ChatIconSection {
   display: flex;
   flex-direction: row;
@@ -22,4 +26,13 @@
 .ChatIconLeft {
   display: flex;
   align-items: center;
+}
+
+.ChatIconSectionDark {
+  background-color: #111;
+  color: white;
+}
+
+.ChatIconSectionDark .MuiSvgIcon-root {
+  color: white;
 }

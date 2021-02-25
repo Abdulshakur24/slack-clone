@@ -42,9 +42,14 @@ function ChatInput({ channelName, channelId, chatRef, value }) {
   return (
     <ChatInputContainer>
       <form>
-        <div className="ChatInputSubContainer">
+        <div
+          className={`ChatInputSubContainer ${
+            value ? "ChatIconSectionDark" : "ChatIconSectionLight"
+          }`}
+        >
           <input
             value={input}
+            style={value ? { background: "#111", color: "white" } : {}}
             onChange={(e) => setInput(e.target.value)}
             placeholder={`Message #${channelName}`}
           />
@@ -58,10 +63,10 @@ function ChatInput({ channelName, channelId, chatRef, value }) {
                 <FlashOnIcon />
               </IconButton>
               <IconButton>
-                <h4>B</h4>
+                <h4 style={value ? { color: "white" } : {}}>B</h4>
               </IconButton>
               <IconButton>
-                <em>I</em>
+                <em style={value ? { color: "white" } : {}}>I</em>
               </IconButton>
               <IconButton>
                 <CodeIcon />
@@ -78,10 +83,10 @@ function ChatInput({ channelName, channelId, chatRef, value }) {
                 <MoreHorizIcon />
               </IconButton>
               <IconButton>
-                <p>Aa</p>
+                <p style={value ? { color: "white" } : {}}>Aa</p>
               </IconButton>
               <IconButton>
-                <p>@</p>
+                <p style={value ? { color: "white" } : {}}>@</p>
               </IconButton>
               <IconButton>
                 <SentimentSatisfiedIcon />
