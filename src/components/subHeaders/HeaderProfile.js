@@ -25,10 +25,18 @@ function HeaderProfile(props) {
           <p>Update your status</p>
         </button>
       </div>
-      <div className="headerProfile_setYourself headerProfile_hover">
+      <div
+        className={`headerProfile_setYourself sameHeaderProfile ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
+      >
         <p>Set yourselt as away</p>
       </div>
-      <div className="headerProfile_pauseNotifications headerProfile_hover">
+      <div
+        className={`headerProfile_pauseNotifications sameHeaderProfile  ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
+      >
         <p>Pause notifications</p>
       </div>
       <hr
@@ -39,18 +47,32 @@ function HeaderProfile(props) {
           backgroundColor: "#d5d5d5",
         }}
       />
-      <div className="headerProfile_editProfile headerProfile_hover">
+      <div
+        className={`headerProfile_editProfile sameHeaderProfile  ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
+      >
         <p>Edit profile</p>
       </div>
-      <div className="headerProfile_viewProfile headerProfile_hover">
+      <div
+        className={`headerProfile_viewProfile sameHeaderProfile  ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
+      >
         <p>View profile</p>
       </div>
-      <div className="headerProfile_preferences headerProfile_hover">
+      <div
+        className={`headerProfile_preferences sameHeaderProfile  ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
+      >
         <p>Preferences</p>
       </div>
       <div
         onClick={() => auth.signOut()}
-        className="headerProfile_signOut headerProfile_hover"
+        className={`headerProfile_signOut sameHeaderProfile  ${
+          props.value ? "headerProfile_hoverDark" : "headerProfile_hover"
+        }`}
       >
         <p>Sign out</p>
       </div>

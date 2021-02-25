@@ -1,0 +1,7 @@
+.MessageContainerDark:hover {
+  background-color: rgb(33, 33, 33);
+}
+
+.MessageContainerLight:hover {
+  background-color: rgb(232, 232, 232);
+}

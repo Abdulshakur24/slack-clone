@@ -39,7 +39,6 @@ function Chat({ value }) {
     >
       {roomDetails && roomMessages && (
         <>
-          {" "}
           <Header>
             <HeaderLeft>
               <h4>
@@ -63,12 +62,14 @@ function Chat({ value }) {
                   timestamp={timestamp}
                   user={user}
                   userImage={userImage}
+                  value={value}
                 />
               );
             })}
             <ChatBottom ref={chatRef} />
           </ChatMessages>
           <ChatInput
+            value={value}
             chatRef={chatRef}
             channelName={roomDetails?.data().name}
             channelId={roomId}

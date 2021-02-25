@@ -61,15 +61,21 @@
   border: 1px solid #111;
 }
 
-.headerProfile_hover {
+.sameHeaderProfile {
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
-.headerProfile_hover:hover {
-  color: white;
-  background-color: rgb(76, 76, 211);
+.sameHeaderProfile:hover {
   cursor: pointer;
+}
+
+.headerProfile_hoverDark:hover {
+  background: rgb(94, 94, 94);
+}
+
+.headerProfile_hover:hover {
+  background: rgb(129, 129, 255);
 }

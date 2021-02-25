@@ -55,7 +55,7 @@ function SideBar({ value }) {
         <SidebarOption value={value} Icon={FileCopyIcon} title="File browser" />
         <SidebarOption value={value} Icon={ExpandLessIcon} title="show less" />
         <hr className={`${value ? "hrDark" : "hr"}`} />
-        <SidebarOption Icon={ExpandMoreIcon} title="Channel" />
+        <SidebarOption value={value} Icon={ExpandMoreIcon} title="Channel" />
         <hr className={`${value ? "hrDark" : "hr"}`} />
         <SidebarOption
           value={value}
@@ -64,7 +64,12 @@ function SideBar({ value }) {
           title="Add channel"
         />
         {channels?.docs.map((doc) => (
-          <SidebarOption id={doc.id} key={doc.id} title={doc.data().name} />
+          <SidebarOption
+            value={value}
+            id={doc.id}
+            key={doc.id}
+            title={doc.data().name}
+          />
         ))}
       </SidebarContainer>
     </div>

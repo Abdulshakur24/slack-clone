@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import "./Message.css";
 
-function Message({ message, timestamp, user, userImage }) {
+function Message({ message, timestamp, user, userImage, value }) {
   return (
-    <MessageContainer>
+    <MessageContainer
+      className={value ? "MessageContainerDark" : "MessageContainerLight"}
+    >
       <img src={userImage} />
       <MessageInfo>
         <h4>
