@@ -119,4 +119,8 @@ const ChatContainer = styled.div`
   transition: all 300ms ease-in-out;
 `;
 
-const ChatMessages = styled.div``;
+const ChatMessages = styled.div`
+  :last-child {
+    padding-bottom: 150px;
+  }
+`;

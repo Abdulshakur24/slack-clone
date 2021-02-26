@@ -1,7 +1,13 @@
 .MessageContainerDark:hover {
   background-color: rgb(33, 33, 33);
+  z-index: 10000;
 }
 
 .MessageContainerLight:hover {
   background-color: rgb(232, 232, 232);
+}
+
+.MessageContainerDark:last-child {
+  padding-bottom: 150px !important;
+  margin-bottom: 150px;
 }
