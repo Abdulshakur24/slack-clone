@@ -2,3 +2,24 @@
   width: 100%;
   height: 100vh;
 }
+/* 
+@media only screen and (max-width: 52.85rem) {
+  .header_siderBar {
+    min-width: 4rem;
+  }
+  .header_profile {
+    min-width: 4rem;
+  }
+
+  .ChatIconSection {
+    display: none !important;
+  }
+
+  .hKzIjL form input {
+    padding: 10px !important;
+    border-bottom: none;
+  }
+  .edDfcb {
+    position: absolute;
+  }
+} */

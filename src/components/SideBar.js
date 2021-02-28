@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SideBar.css";
 import styled from "styled-components";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
@@ -17,10 +17,13 @@ import SidebarOption from "./SidebarOption";
 import db, { auth } from "../Firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Draggable from "react-draggable";
+import ChannelDialog from "./ChannelDialog";
 
 function SideBar({ value }) {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
   const [user] = useAuthState(auth);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={`sideBar ${value ? "sidebarScrollDark" : "sidebarScroll"}`}>
       <SidebarContainer style={{ backgroundColor: value && "#111" }}>
@@ -58,12 +61,13 @@ function SideBar({ value }) {
         <SidebarOption value={value} Icon={ExpandMoreIcon} title="Channel" />
         <hr className={`${value ? "hrDark" : "hr"}`} />
 
-        <SidebarOption
+        {/* <SidebarOption
           value={value}
           Icon={AddIcon}
           addChannelOption
           title="Add channel"
-        />
+        /> */}
+        <ChannelDialog value={value} isOpen={isOpen} setIsOpen={setIsOpen} />
         {channels?.docs.map((doc) => (
           <SidebarOption
             value={value}
