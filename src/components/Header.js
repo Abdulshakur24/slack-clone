@@ -11,6 +11,9 @@ import HeaderProfile from "./subHeaders/HeaderProfile";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../Firebase";
 import SwitchToggle from "./SwitchToggle";
+import { useDispatch, useSelector } from "react-redux";
+import { slideInAndOut } from "../features/SlideStatus";
+import { darkOrLight } from "../features/Theme";
 
 //useSearchVisibility
 function useSearchVisibility(initialIsVisible) {
@@ -150,67 +153,99 @@ function Header({ value, setValue }) {
     setIsProfileVisible,
   } = useProfiileVisibility(false);
 
+  //const [on, setOn] = useState(false);
+  const on = useSelector((state) => state.slideState.value);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(darkOrLight(value));
+  }, [value]);
   return (
     <div
       className={`header ${value ? "headerDark" : ""}`}
       style={{ backgroundColor: value && "#111" }}
     >
-      <div className="header_siderBar">
-        <SwitchToggle
-          value={value}
-          setValue={setValue}
-          isOn={value}
-          handleToggle={() => setValue(!value)}
-        />
-        <IconButton
-          className="header_iconButton"
-          onClick={() => setIsHistoryVisible(!isHistoryVisible)}
-        >
-          <ScheduleIcon className="header_ScheduleIcon" />
-        </IconButton>
-      </div>
-      {isHistoryVisible && (
-        <HeaderHistory value={value} historyRef={historyRef} />
-      )}
+      <div className="header_leftSide">
+        <div className="header_siderBar">
+          <SwitchToggle
+            value={value}
+            setValue={setValue}
+            isOn={value}
+            handleToggle={() => setValue(!value)}
+          />
+          <IconButton
+            className="header_iconButton"
+            onClick={() => setIsHistoryVisible(!isHistoryVisible)}
+          >
+            <ScheduleIcon className="header_ScheduleIcon" />
+          </IconButton>
+        </div>
 
-      <div className="header_search_container">
+        {isHistoryVisible && (
+          <HeaderHistory value={value} historyRef={historyRef} />
+        )}
+
+        <div className="header_search_container">
+          <button
+            style={{
+              backgroundColor: value && "#111",
+              border: value && "1px solid gray",
+            }}
+            onClick={() => setIsSearchVisible(!isSearchVisible)}
+          >
+            <span>Search</span>
+          </button>
+        </div>
+
+        {isSearchVisible && (
+          <HeaderSearch
+            value={value}
+            searchRef={searchRef}
+            searchVisibility={isSearchVisible}
+            setIsSearchVisible={setIsSearchVisible}
+          />
+        )}
+
+        <div className="header_markQuestion">
+          <IconButton
+            className="header_iconButton"
+            onClick={() => setIsHelpVisible(!isHelpVisible)}
+          >
+            <HelpOutlineOutlinedIcon className="header_HelpOutlineOutlinedIcon" />
+          </IconButton>
+        </div>
+
+        {isHelpVisible && <HeaderHelp value={value} helpRef={helpRef} />}
+      </div>
+      <div className="header_rightSide">
         <button
-          style={{
-            backgroundColor: value && "#111",
-            border: value && "1px solid gray",
-          }}
-          onClick={() => setIsSearchVisible(!isSearchVisible)}
+          style={{ display: "flex" }}
+          onClick={() => setIsProfileVisible(!isProfileVisible)}
         >
-          <span>Search</span>
-        </button>
-      </div>
-      {isSearchVisible && (
-        <HeaderSearch
-          value={value}
-          searchRef={searchRef}
-          searchVisibility={isSearchVisible}
-          setIsSearchVisible={setIsSearchVisible}
-        />
-      )}
-
-      <div className="header_markQuestion">
-        <IconButton
-          className="header_iconButton"
-          onClick={() => setIsHelpVisible(!isHelpVisible)}
-        >
-          <HelpOutlineOutlinedIcon className="header_HelpOutlineOutlinedIcon" />
-        </IconButton>
-      </div>
-      {isHelpVisible && <HeaderHelp value={value} helpRef={helpRef} />}
-
-      <div className="header_profile">
-        <button onClick={() => setIsProfileVisible(!isProfileVisible)}>
           <img src={user?.photoURL} />
         </button>
+        {isProfileVisible && (
+          <HeaderProfile value={value} profileRef={profileRef} />
+        )}
+
+        <a
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            marginLeft: "0.5rem",
+          }}
+          href="#"
+          className={`header__toggle ${
+            on ? "open" : "close"
+          } hide-for-desktosp`}
+          onClick={() => dispatch(slideInAndOut(!on))}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
       </div>
-      {isProfileVisible && (
-        <HeaderProfile value={value} profileRef={profileRef} />
-      )}
     </div>
   );
 }

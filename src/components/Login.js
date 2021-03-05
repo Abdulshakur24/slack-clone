@@ -1,15 +1,18 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { auth, provider } from "../Firebase";
 
 function Login() {
+  const [value, setValue] = useState(false);
   const signIn = (e) => {
     e.preventDefault();
     auth.signInWithPopup(provider).catch((error) => alert(error.message));
   };
   return (
-    <LoginContainer>
+    <LoginContainer
+      className={value ? "LoginContainerDark" : "LoginContainerLight"}
+    >
       <LoginInnerContainer>
         <img
           src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd.jpg"

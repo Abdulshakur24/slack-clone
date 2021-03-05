@@ -48,9 +48,3 @@
 .sidebarScrollDark::-webkit-scrollbar-thumb:hover {
   background: #111;
 }
-
-@media only screen and (max-width: 43.75rem) {
-  .sideBar {
-    width: 30%;
-  }
-}

@@ -14,6 +14,7 @@ import TocIcon from "@material-ui/icons/Toc";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
+import { Picker } from "emoji-mart";
 
 function ChatInput({ channelName, channelId, chatRef, value }) {
   const [input, setInput] = useState("");

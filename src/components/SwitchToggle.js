@@ -11,11 +11,11 @@ function SwitchToggle({ isOn, handleToggle, setValue, value }) {
   if (localStorage) {
     theme = localStorage.getItem("theme");
   }
-  if (theme === lightTheme || theme === darkTheme) {
-    body.classList.add(theme);
-  } else {
-    body.classList.add(lightTheme);
-  }
+  // if (theme === lightTheme || theme === darkTheme) {
+  //   body.classList.add(theme);
+  // } else {
+  //   body.classList.add(lightTheme);
+  // }
 
   setTimeout(() => {
     if (theme === "dark") {

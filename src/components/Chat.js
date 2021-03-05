@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectRoomId } from "../features/appSlice";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import db from "../Firebase";
+import SideSlidebar from "./SideSlidebar";
 
 function Chat({ value }) {
   const chatRef = useRef(null);
@@ -34,7 +35,7 @@ function Chat({ value }) {
 
   return (
     <ChatContainer
-      className="chat"
+      className={`"chat" ${value ? "dark" : "light"}`}
       style={{ background: value && "#111", color: value && "white" }}
     >
       {roomDetails && roomMessages && (
@@ -76,6 +77,7 @@ function Chat({ value }) {
           />
         </>
       )}
+      <SideSlidebar />
     </ChatContainer>
   );
 }
@@ -98,6 +100,7 @@ const HeaderLeft = styled.div`
     display: flex;
     text-transform: lowercase;
     margin-right: 10px;
+    font-size: 1rem;
   }
 
   h4 .MuiSvgIcon-root {
@@ -106,6 +109,8 @@ const HeaderLeft = styled.div`
   }
 `;
 const HeaderRight = styled.div`
+  display: flex;
+
   p {
     display: flex;
     align-items: center;
@@ -114,12 +119,60 @@ const HeaderRight = styled.div`
 `;
 
 const ChatContainer = styled.div`
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-bottom: 150px;
+  &.dark::-webkit-scrollbar {
+    width: 10px;
+  }
+  /*Dark mode*/
+  &.dark::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  &.dark::-webkit-scrollbar-track {
+    background: rgb(70, 70, 70);
+  }
+  /* Handle */
+  &.dark::-webkit-scrollbar-thumb {
+    background: rgb(26, 26, 26);
+    border-left: 1px solid #262626;
+  }
+  /* Handle on hover */
+  &.dark::-webkit-scrollbar-thumb:hover {
+    background: #111;
+  }
+  /*Light mode*/
+  &.light::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  &.light::-webkit-scrollbar-track {
+    background: rgb(70, 70, 70);
+  }
+  /* Handle */
+  &.light::-webkit-scrollbar-thumb {
+    background: rgb(26, 26, 26);
+    border-left: 1px solid #262626;
+  }
+  /* Handle on hover */
+  &.light::-webkit-scrollbar-thumb:hover {
+    background: #111;
+  }
+
   width: 75%;
   transition: all 300ms ease-in-out;
+  @media only screen and (max-width: 52.85rem) {
+    width: 100%;
+    padding-bottom: 100px;
+  }
 `;
 
 const ChatMessages = styled.div`
+  @media only screen and (max-width: 52.85rem) {
+    :last-child {
+      padding-bottom: 100px;
+    }
+  }
   :last-child {
     padding-bottom: 150px;
   }
