@@ -22,7 +22,7 @@ function SideSlidebar() {
         className={`${value ? "darkMode" : "lightMode"}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div>
+        <div className="slideWorkSpaceHeader">
           Workspace <p>{user?.displayName}</p>
         </div>
         {channels?.docs.map((doc) => (
@@ -61,12 +61,13 @@ const SideSlideContainer = styled.div`
   width: 70%;
   padding: 0rem 1rem;
   overflow: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   background-color: rgba(255, 255, 255, 0);
-  box-shadow: 0px 3px 24px 9px rgb(0 0 0 / 60%);
+  box-shadow: 0px 3px 24px 9px rgb(0 0 0 / 30%);
 
-  div {
+  .slideWorkSpaceHeader {
     display: flex;
+    flex-direction: column;
   }
 
   &.darkMode {
