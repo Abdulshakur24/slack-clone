@@ -148,6 +148,10 @@ const ChatInputMobileBody = styled.div`
           .MuiInputBase-input {
             color: black;
           }
+
+          .MuiInput-underline:after {
+            border-bottom: 2px solid black;
+          }
         }
 
         .icons {
