@@ -59,7 +59,7 @@
   margin-bottom: 0.5rem;
 }
 
-.MuiInputBase-input {
+.bodyChannel_dialog .MuiInputBase-input {
   color: white !important;
 }
 
@@ -70,10 +70,10 @@
   justify-content: flex-end;
 }
 
-.MuiInput-underline:before {
+.bodyChannel_dialog .MuiInput-underline:before {
   border-bottom: 2px solid gray !important;
 }
 
-.MuiInput-underline:after {
+.bodyChannel_dialog .MuiInput-underline:after {
   border-bottom: 2px solid white !important;
 }

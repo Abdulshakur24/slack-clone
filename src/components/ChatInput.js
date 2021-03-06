@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import db, { auth } from "../Firebase";
@@ -14,7 +14,10 @@ import TocIcon from "@material-ui/icons/Toc";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
+
 import { Picker } from "emoji-mart";
+import { useSelector } from "react-redux";
+import ChatInputMobile from "./ChatInputMobile";
 
 function ChatInput({ channelName, channelId, chatRef, value }) {
   const [input, setInput] = useState("");
@@ -33,6 +36,7 @@ function ChatInput({ channelName, channelId, chatRef, value }) {
       user: user?.displayName,
       userImage: user?.photoURL,
     });
+
     chatRef.current.scrollIntoView({
       behavior: "smooth",
     });
@@ -103,6 +107,7 @@ function ChatInput({ channelName, channelId, chatRef, value }) {
           SEND
         </Button>
       </form>
+      <ChatInputMobile channelId={channelId} chatRef={chatRef} />
     </ChatInputContainer>
   );
 }
@@ -111,6 +116,7 @@ export default ChatInput;
 
 const ChatInputContainer = styled.div`
   border-radius: 20px;
+
   > form {
     display: flex;
     position: relative;
@@ -129,6 +135,20 @@ const ChatInputContainer = styled.div`
 
   > form > button {
     display: none;
+  }
+
+  .ChatInputMobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 52.85rem) {
+    > form .ChatInputSubContainer {
+      display: none;
+    }
+
+    .ChatInputMobile {
+      display: block;
+    }
   }
 `;
 

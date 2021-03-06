@@ -121,6 +121,7 @@ const HeaderRight = styled.div`
 const ChatContainer = styled.div`
   overflow-y: auto;
   padding-bottom: 150px;
+
   &.dark::-webkit-scrollbar {
     width: 10px;
   }
