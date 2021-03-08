@@ -70,10 +70,11 @@ const ChannelDialogMobileBody = styled.div`
   background-color: rgba(255, 255, 255, 0);
 
   .container {
+    width: 12.1875rem;
     .contents {
       display: flex;
       flex-direction: column;
-      width: 95%;
+
       p {
         margin-bottom: 1rem;
       }

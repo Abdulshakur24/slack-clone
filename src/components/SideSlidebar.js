@@ -65,8 +65,8 @@ function SideSlidebar() {
           <SideSlidebarOption Icon={ExpandMoreIcon} title="Show more" />
           <div className={`addChannelContainer`}>
             <h3>Channel</h3>
-            <IconButton>
-              <AddIcon onClick={() => setIsOpen(true)} />
+            <IconButton onClick={() => setIsOpen(true)}>
+              <AddIcon />
             </IconButton>
           </div>
 
