@@ -26,7 +26,10 @@ function ChannelDialogMobile({ isOpen, setIsOpen }) {
       <div className={`container`}>
         <header>
           <h4>New Channel</h4>
-          <IconButton onClick={() => setIsOpen(!isOpen)}>
+          <IconButton
+            style={{ padding: "1rem 0rem" }}
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <CloseIcon />
           </IconButton>
         </header>
@@ -70,7 +73,7 @@ const ChannelDialogMobileBody = styled.div`
   background-color: rgba(255, 255, 255, 0);
 
   .container {
-    width: 12.1875rem;
+    width: 13.1875rem;
     .contents {
       display: flex;
       flex-direction: column;
