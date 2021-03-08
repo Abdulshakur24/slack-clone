@@ -73,7 +73,7 @@ const ChannelDialogMobileBody = styled.div`
     .contents {
       display: flex;
       flex-direction: column;
-      width: 12.1875rem;
+      width: 95%;
       p {
         margin-bottom: 1rem;
       }
