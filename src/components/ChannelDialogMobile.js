@@ -69,6 +69,8 @@ const ChannelDialogMobileBody = styled.div`
   background-color: rgba(255, 255, 255, 0);
   overflow: auto;
   .container {
+    width: 100%;
+    height: 100%;
     .contents {
       display: flex;
       flex-direction: column;
