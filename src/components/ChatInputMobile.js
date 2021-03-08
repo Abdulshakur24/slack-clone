@@ -15,7 +15,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function ChatInputMobile({ channelId, chatRef }) {
   const [input, setInput] = useState("");
   const [user] = useAuthState(auth);
-  const whichTheme = useSelector((state) => state.theme.value);
+  const whichTheme = useSelector((state) => state.theme.isDark);
 
   useEffect(() => {
     chatRef.current.scrollIntoView({
@@ -147,6 +147,14 @@ const ChatInputMobileBody = styled.div`
 
           .MuiInputBase-input {
             color: black;
+          }
+
+          .MuiInput-underline:after {
+            border-bottom: 2px solid black;
+          }
+
+          .MuiInput-underline:hover:not(.Mui-disabled):before {
+            border-bottom: 2px solid gray;
           }
 
           .MuiInput-underline:after {

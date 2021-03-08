@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useCollection } from "react-firebase-hooks/firestore";
 import db from "../Firebase";
@@ -10,14 +10,7 @@ function SidebarOption({ Icon, title, addChannelOption, id, value }) {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
   const channelRef = useRef(null);
   const dispatch = useDispatch();
-  const addChannel = () => {
-    const channelName = prompt("Please enter the channel name");
-    if (channelName) {
-      db.collection("rooms").add({
-        name: channelName,
-      });
-    }
-  };
+
   const selectChannel = () => {
     if (id) {
       dispatch(
@@ -27,10 +20,11 @@ function SidebarOption({ Icon, title, addChannelOption, id, value }) {
       );
     }
   };
+
   return (
     <SidebarOptionContainer
       className={value ? "sidebarOption_dark" : "sidebarOption_light"}
-      onClick={addChannelOption ? addChannel : selectChannel}
+      onClick={addChannelOption ? "addChannel" : selectChannel}
     >
       {Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
       {Icon ? (

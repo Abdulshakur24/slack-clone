@@ -154,11 +154,12 @@ function Header({ value, setValue }) {
   } = useProfiileVisibility(false);
 
   //const [on, setOn] = useState(false);
-  const on = useSelector((state) => state.slideState.value);
+  const on = useSelector((state) => state.slideState.isSlideOpen);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(darkOrLight(value));
   }, [value]);
+
   return (
     <div
       className={`header ${value ? "headerDark" : ""}`}

@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const sideSlide = createSlice({
   name: "status",
   initialState: {
-    value: false,
+    isSlideOpen: false,
   },
   reducers: {
     slideInAndOut: (state, action) => {
-      state.value = action.payload;
+      state.isSlideOpen = action.payload;
     },
   },
 });
