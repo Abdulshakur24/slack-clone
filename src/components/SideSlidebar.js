@@ -113,6 +113,7 @@ const SideSlideContainer = styled.div`
   backdrop-filter: blur(20px);
   background-color: rgba(255, 255, 255, 0);
   box-shadow: 0px 3px 24px 9px rgb(0 0 0 / 30%);
+  z-index: 20;
 
   .contents {
     backdrop-filter: blur(50px);
